@@ -7,4 +7,12 @@
 
 \f0\fs24 \cf0 SELECT nom\
 FROM Chercheur\
-ORDER BY nom ASC;}
+ORDER BY nom ASC;\
+\
+SELECT nomProd\
+FROM Produit\
+ORDER BY nomProd \
+\
+SELECT B.intitule, B."date", C.nom\
+FROM Brevet as B, Chercheur as C, Proprietaire as P\
+WHERE P.Nbrev=B.Nbrev and P.NSS=C.NSS}
