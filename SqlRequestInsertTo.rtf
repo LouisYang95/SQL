@@ -5,7 +5,50 @@
 \paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES\
-(1600425311114,'dupont',1960/04/20,'francais');\
+\f0\fs24 \cf0 INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES(1600425311114,'Dupont','1960/04/20','francais');\
+INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1650530311113,'Dupuy','1965/05/25','francais');\
+INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1021130311115,'Yang','2002/11/28','francais');\
+INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1020930311114,'Kouakou','2002/09/19','francais');\
+INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1000530311114,'Castanier','2000/05/30','francais');\
+INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1000530312114,'Adje','2000/05/25','francais');\
+INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1650530311114,'Jordan','1965/05/25','americain');\
+INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1690530311114,'Johnson','1969/05/25','americain');\
 \
-INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1650530311114,'dupuy','1965/05/25','francais');}
+INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (1,'RTX','1000','CG');\
+INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (2,'TTX','5000','CG');\
+INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (3,'FTX','10','jeu');\
+INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (4,'Lampeled','90','lumiere');\
+INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (5,'stylo','1000','fourniture');\
+INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (6,'feuille','1000','fourniture');\
+INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (7,'feutre','1000','fourniture');\
+INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (8,'clavier','10000','informatique');\
+INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (9,'souris','100000','informatique');\
+INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (10,'livre','1000','electronique');\
+\
+INSERT INTO Brevet (Nbrev,intitule,"date",pays) VALUES (1,'cartegraphique','2040/09/12','francais');\
+INSERT INTO Brevet (Nbrev,intitule,"date",pays) VALUES (2,'jeu','2030/09/20','francais');\
+INSERT INTO Brevet (Nbrev,intitule,"date",pays) VALUES (3,'LED','2028/11/20','americain');\
+INSERT INTO Brevet (Nbrev,intitule,"date",pays) VALUES (4,'fourniture','2034/11/30','mexicain');\
+INSERT INTO Brevet (Nbrev,intitule,"date",pays) VALUES (5,'informatique','2024/09/30','chinois');\
+\
+INSERT INTO Invention(Nbrev,Nprod) VALUES (1,1);\
+INSERT INTO Invention(Nbrev,Nprod) VALUES (1,2);\
+INSERT INTO Invention(Nbrev,Nprod) VALUES (2,3);\
+INSERT INTO Invention(Nbrev,Nprod) VALUES (3,4);\
+INSERT INTO Invention(Nbrev,Nprod) VALUES (4,5);\
+INSERT INTO Invention(Nbrev,Nprod) VALUES (4,6);\
+INSERT INTO Invention(Nbrev,Nprod) VALUES (4,7);\
+INSERT INTO Invention(Nbrev,Nprod) VALUES (5,8);\
+INSERT INTO Invention(Nbrev,Nprod) VALUES (5,9);\
+INSERT INTO Invention(Nbrev,Nprod) VALUES (5,10);\
+\
+INSERT INTO Proprietaire(Nbrev,NSS) VALUES (1,1600425311114);\
+INSERT INTO Proprietaire(Nbrev,NSS) VALUES (1,1650530311113);\
+INSERT INTO Proprietaire(Nbrev,NSS) VALUES (2,1650530311113);\
+INSERT INTO Proprietaire(Nbrev,NSS) VALUES (3,1021130311115);\
+INSERT INTO Proprietaire(Nbrev,NSS) VALUES (5,1021130311115);\
+INSERT INTO Proprietaire(Nbrev,NSS) VALUES (5,1020930311114);\
+INSERT INTO Proprietaire(Nbrev,NSS) VALUES (5,1000530311114);\
+INSERT INTO Proprietaire(Nbrev,NSS) VALUES (3,1000530312114);\
+INSERT INTO Proprietaire(Nbrev,NSS) VALUES (4,1650530311114);\
+INSERT INTO Proprietaire(Nbrev,NSS) VALUES (4,1690530311114);}
