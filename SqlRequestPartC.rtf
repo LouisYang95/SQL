@@ -9,4 +9,17 @@
 FROM Produit AS p , Invention AS I\
 WHERE P.categorie = 'cosmetique' AND P.prix > 200 AND P.Nprod = I.Nprod\
 GROUP BY I.Nbrev\
-HAVING count(I.Nbrev) > 0}
+HAVING count(I.Nbrev) > 0\
+\
+SELECT DISTINCT C.nom , P.nomProd\
+FROM Chercheur as C , Produit as P , Brevet as B, Proprietaire as P2 , Invention as I\
+WHERE (P.categorie = 'decoration' OR P.categorie = 'cosmetique') AND C.NSS = P2.NSS AND P.Nprod = I.Nprod AND P2.Nbrev = I.Nbrev\
+\
+\
+\
+SELECT C.nationalite,C.NSS\
+FROM Chercheur as C , Brevet as B, Proprietaire as P\
+WHERE B.pays = 'americain' AND C.NSS = P.NSS AND B.Nbrev = P.Nbrev AND P.NSS NOT IN (SELECT P2.NSS\
+FROM Brevet AS B2, Chercheur as C2, Proprietaire as P2\
+WHERE C2.NSS = P2.NSS AND B2.Nbrev = P2.Nbrev AND B2.pays <> 'americain'\
+);}
