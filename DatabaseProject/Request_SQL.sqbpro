@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="" readonly="0" foreign_keys="" case_sensitive_like="" temp_store="" wal_autocheckpoint="" synchronous=""/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="682"/><column_width id="4" width="0"/></tab_structure><tab_browse><current_table name="0,0:"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Brevet" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="39"/><column index="2" value="85"/><column index="3" value="70"/><column index="4" value="58"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Chercheur" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="88"/><column index="2" value="63"/><column index="3" value="69"/><column index="4" value="63"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Invention" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="39"/><column index="2" value="40"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Produit" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="40"/><column index="2" value="55"/><column index="3" value="48"/><column index="4" value="73"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Proprietaire" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="39"/><column index="2" value="88"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE Chercheur (
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/louis/Documents/GitHub/SQL/DatabaseProject/BDD_SQL.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="682"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,6:mainBrevet"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Brevet" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="39"/><column index="2" value="85"/><column index="3" value="70"/><column index="4" value="58"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Chercheur" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="88"/><column index="2" value="63"/><column index="3" value="69"/><column index="4" value="63"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Invention" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="39"/><column index="2" value="40"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Produit" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="40"/><column index="2" value="55"/><column index="3" value="48"/><column index="4" value="73"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Proprietaire" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="39"/><column index="2" value="88"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE Chercheur (
 	NSS	INT(13) PRIMARY KEY,
 	nom	char(20) NOT NULL,
 	dateNaiss	date NOT NULL,
@@ -129,25 +129,11 @@ ORDER BY nom ASC;
 --B3
 -- SELECT B.intitule, B.&quot;date&quot;, C.nom
 -- FROM Brevet as B, Chercheur as C, Proprietaire as P
--- WHERE P.Nbrev=B.Nbrev and P.NSS=C.NSS</sql><sql name="SQL 5">--B1
--- SELECT nom
--- FROM Chercheur
--- ORDER BY nom ASC;
-
--- B2
--- SELECT nomProd
--- FROM Produit
--- ORDER BY nomProd 
-
--- B3
-SELECT B.intitule, B.&quot;date&quot;, C.nom
-FROM Brevet as B, Chercheur as C, Proprietaire as P
-WHERE P.Nbrev=B.Nbrev and P.NSS=C.NSS</sql><sql name="SQL 7">-- C1
--- SELECT P.nomProd
--- FROM Produit AS p , Invention AS I
+-- WHERE P.Nbrev=B.Nbrev and P.NSS=C.NSS</sql><sql name="SQL 7">-- C1
+-- SELECT P.nomProd,I.Nbrev
+-- FROM Produit AS P , Invention AS I
 -- WHERE P.categorie = 'cosmetique' AND P.prix &gt; 200 AND P.Nprod = I.Nprod
--- GROUP BY I.Nbrev
--- HAVING count(I.Nbrev) &gt; 0
+
 -- 
 -- C2
 -- SELECT DISTINCT C.nom , P.nomProd
@@ -155,7 +141,7 @@ WHERE P.Nbrev=B.Nbrev and P.NSS=C.NSS</sql><sql name="SQL 7">-- C1
 -- WHERE (P.categorie = 'decoration' OR P.categorie = 'cosmetique') AND C.NSS = P2.NSS AND P.Nprod = I.Nprod AND P2.Nbrev = I.Nbrev
 -- 
 -- C3
--- SELECT C.nom , C.NSS
+-- SELECT DISTINCT C.nom , C.NSS
 -- FROM Chercheur as C , Proprietaire as P1 , Produit as P , Invention as I
 -- WHERE C.NSS = P1.NSS AND I.Nprod=P.Nprod AND I.Nbrev = P1.Nbrev AND P.categorie = 'decoration' 
 -- AND P1.NSS IN (SELECT P3.NSS
@@ -163,12 +149,12 @@ WHERE P.Nbrev=B.Nbrev and P.NSS=C.NSS</sql><sql name="SQL 7">-- C1
 -- WHERE C2.NSS = P3.NSS AND I2.Nprod = P2.Nprod AND I2.Nbrev = P3.Nbrev AND P2.categorie = 'cosmetique');
 -- 
 -- C4 
--- SELECT C.nationalite,C.NSS
--- FROM Chercheur as C , Brevet as B, Proprietaire as P
--- WHERE B.pays = 'americain' AND C.NSS = P.NSS AND B.Nbrev = P.Nbrev AND P.NSS NOT IN (SELECT P2.NSS
--- FROM Brevet AS B2, Chercheur as C2, Proprietaire as P2
--- WHERE C2.NSS = P2.NSS AND B2.Nbrev = P2.Nbrev AND B2.pays &lt;&gt; 'americain'
--- );
+SELECT C.nationalite,C.NSS
+FROM Chercheur as C , Brevet as B, Proprietaire as P
+WHERE B.pays = 'americain' AND C.NSS = P.NSS AND B.Nbrev = P.Nbrev AND P.NSS NOT IN (SELECT P2.NSS
+FROM Brevet AS B2, Chercheur as C2, Proprietaire as P2
+WHERE C2.NSS = P2.NSS AND B2.Nbrev = P2.Nbrev AND B2.pays &lt;&gt; 'americain'
+);
 -- 
 -- C5
 -- SELECT DISTINCT C.nom
@@ -197,7 +183,12 @@ WHERE P.Nbrev=B.Nbrev and P.NSS=C.NSS</sql><sql name="SQL 7">-- C1
 -- ORDER BY P.nomProd
 
 --C9
-SELECT categorie, AVG(prix)
-FROM Produit 
-group by categorie
-HAVING COUNT (*) &gt;7 ;</sql><current_tab id="3"/></tab_sql></sqlb_project>
+-- SELECT categorie, AVG(prix)
+-- FROM Produit 
+-- group by categorie
+-- HAVING COUNT (*) &gt;7 ;</sql><sql name="SQL 7">SELECT DISTINCT C.nom , P.nomProd,
+FROM Chercheur as C , Produit as P , Brevet as B, Proprietaire as P2 , Invention as I
+WHERE P.categorie = 'decoration' AND C.NSS = P2.NSS AND P.Nprod = I.Nprod AND P2.Nbrev = I.Nbrev
+ AND P2.NSS IN( SELECT P3.NSS
+FROM Chercheur as C2 , Produit as PR , Brevet as B2, Proprietaire as P3 , Invention as I2
+WHERE C2.NSS = P3.NSS AND P3.Nbrev = I2.Nbrev AND I2.Nprod=PR.Nprod and 	PR.categorie = 'cosmetique')</sql><current_tab id="3"/></tab_sql></sqlb_project>

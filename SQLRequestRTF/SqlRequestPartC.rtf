@@ -5,64 +5,61 @@
 \paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 --C1\
-SELECT P.nomProd\
-FROM Produit AS p , Invention AS I\
+\f0\fs24 \cf0 -- C1\
+SELECT P.nomProd,I.Nbrev\
+FROM Produit AS P , Invention AS I\
 WHERE P.categorie = 'cosmetique' AND P.prix > 200 AND P.Nprod = I.Nprod\
-GROUP BY I.Nbrev\
-HAVING count(I.Nbrev) > 0\
 \
---C2\
-SELECT DISTINCT C.nom , P.nomProd\
-FROM Chercheur as C , Produit as P , Brevet as B, Proprietaire as P2 , Invention as I\
-WHERE (P.categorie = 'decoration' OR P.categorie = 'cosmetique') AND C.NSS = P2.NSS AND P.Nprod = I.Nprod AND P2.Nbrev = I.Nbrev\
-\
---C3\
-SELECT C.nom , C.NSS\
-FROM Chercheur as C , Proprietaire as P1 , Produit as P , Invention as I\
-WHERE C.NSS = P1.NSS AND I.Nprod=P.Nprod AND I.Nbrev = P1.Nbrev AND P.categorie = 'decoration' \
-AND P1.NSS IN (SELECT P3.NSS\
-FROM Chercheur as C2 , Proprietaire as P3 , Produit as P2 , Invention as I2\
-WHERE C2.NSS = P3.NSS AND I2.Nprod = P2.Nprod AND I2.Nbrev = P3.Nbrev AND P2.categorie = 'cosmetique');\
-\
+-- \
+-- C2\
+-- SELECT DISTINCT C.nom , P.nomProd\
+-- FROM Chercheur as C , Produit as P , Brevet as B, Proprietaire as P2 , Invention as I\
+-- WHERE (P.categorie = 'decoration' OR P.categorie = 'cosmetique') AND C.NSS = P2.NSS AND P.Nprod = I.Nprod AND P2.Nbrev = I.Nbrev\
+-- \
+-- C3\
+-- SELECT DISTINCT C.nom , C.NSS\
+-- FROM Chercheur as C , Proprietaire as P1 , Produit as P , Invention as I\
+-- WHERE C.NSS = P1.NSS AND I.Nprod=P.Nprod AND I.Nbrev = P1.Nbrev AND P.categorie = 'decoration' \
+-- AND P1.NSS IN (SELECT P3.NSS\
+-- FROM Chercheur as C2 , Proprietaire as P3 , Produit as P2 , Invention as I2\
+-- WHERE C2.NSS = P3.NSS AND I2.Nprod = P2.Nprod AND I2.Nbrev = P3.Nbrev AND P2.categorie = 'cosmetique');\
+-- \
 -- C4 \
-SELECT C.nationalite,C.NSS\
-FROM Chercheur as C , Brevet as B, Proprietaire as P\
-WHERE B.pays = 'americain' AND C.NSS = P.NSS AND B.Nbrev = P.Nbrev AND P.NSS NOT IN (SELECT P2.NSS\
-FROM Brevet AS B2, Chercheur as C2, Proprietaire as P2\
-WHERE C2.NSS = P2.NSS AND B2.Nbrev = P2.Nbrev AND B2.pays <> 'americain'\
-);\
-\
---C5\
-SELECT DISTINCT C.nom\
-FROM Chercheur as C, Produit as P1, Invention as I, Proprietaire as P2\
-WHERE P1.categorie = 'bricolage' AND I.Nprod = P1.Nprod AND I.Nbrev = P2.Nbrev AND C.NSS = P2.NSS;\
-\
---C6\
-SELECT B.intitule, C.nom\
-FROM Brevet as B, Chercheur as C, Proprietaire as P\
-WHERE P.Nbrev = B.Nbrev and P.NSS = C.NSS and C.dateNaiss = (SELECT max(dateNaiss) \
-FROM Brevet as B, Chercheur as C, Proprietaire as P);\
-\
---C7\
-SELECT count(B.Nbrev), C.nom\
-FROM Brevet as B, Chercheur as C, Proprietaire as P\
-WHERE P.Nbrev = B.Nbrev and P.NSS = C.NSS and C.nom = 'Trouverien';\
-\
---C8\
-SELECT P.nomProd, MIN(P.prix),P.categorie\
-FROM Produit as P, Brevet as B, Invention as I\
-WHERE I.Nbrev = B.Nbrev and I.Nprod = P.Nprod and B.pays = 'francais' \
-and P.prix = (SELECT MIN(Prix) \
-                FROM Produit as P, Brevet as B, Invention as I\
-                WHERE I.Nbrev = B.Nbrev and I.Nprod = P.Nprod and B.pays = 'francais' )\
-GROUP BY P.nomProd\
-ORDER BY P.nomProd\
-\
+-- SELECT C.nationalite,C.NSS\
+-- FROM Chercheur as C , Brevet as B, Proprietaire as P\
+-- WHERE B.pays = 'americain' AND C.NSS = P.NSS AND B.Nbrev = P.Nbrev AND P.NSS NOT IN (SELECT P2.NSS\
+-- FROM Brevet AS B2, Chercheur as C2, Proprietaire as P2\
+-- WHERE C2.NSS = P2.NSS AND B2.Nbrev = P2.Nbrev AND B2.pays <> 'americain'\
+-- );\
+-- \
+-- C5\
+-- SELECT DISTINCT C.nom\
+-- FROM Chercheur as C, Produit as P1, Invention as I, Proprietaire as P2\
+-- WHERE P1.categorie = 'bricolage' AND I.Nprod = P1.Nprod AND I.Nbrev = P2.Nbrev AND C.NSS = P2.NSS;\
+-- \
+-- C6\
+-- SELECT B.intitule, C.nom\
+-- FROM Brevet as B, Chercheur as C, Proprietaire as P\
+-- WHERE P.Nbrev = B.Nbrev and P.NSS = C.NSS and C.dateNaiss = (SELECT max(dateNaiss) \
+-- FROM Brevet as B, Chercheur as C, Proprietaire as P);\
+-- \
+-- C7\
+-- SELECT count(B.Nbrev), C.nom\
+-- FROM Brevet as B, Chercheur as C, Proprietaire as P\
+-- WHERE P.Nbrev = B.Nbrev and P.NSS = C.NSS and C.nom = 'Trouverien';\
+-- \
+-- C8\
+-- SELECT P.nomProd, MIN(P.prix),P.categorie\
+-- FROM Produit as P, Brevet as B, Invention as I\
+-- WHERE I.Nbrev = B.Nbrev and I.Nprod = P.Nprod and B.pays = 'francais' \
+-- and P.prix = (SELECT MIN(Prix) \
+--                 FROM Produit as P, Brevet as B, Invention as I\
+--                 WHERE I.Nbrev = B.Nbrev and I.Nprod = P.Nprod and B.pays = 'francais' )\
+-- GROUP BY P.nomProd\
+-- ORDER BY P.nomProd\
 \
 --C9\
-SELECT categorie, AVG(prix)\
-FROM Produit \
-group by categorie\
-HAVING COUNT (*) >7 ;\
-}
+-- SELECT categorie, AVG(prix)\
+-- FROM Produit \
+-- group by categorie\
+-- HAVING COUNT (*) >7 ;}
