@@ -12,7 +12,8 @@ INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1020930311114,'Kou
 INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1000530311114,'Castanier','2000/05/30','francais');\
 INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1100530312114,'Adje','2000/05/25','francais');\
 INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1650530311114,'Jordan','1965/05/25','americain');\
-INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1690530311114,'Trouverien','1969/05/25','americain');\
+INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1690530311114,'Michel','1969/05/25','americain');\
+INSERT INTO Chercheur (NSS,nom,dateNaiss,nationalite) VALUES (1800530311114,'Trouverien','1980/05/25','americain');\
 \
 INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (1,'rtx','1000','CG');\
 INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (2,'ttx','5000','CG');\
@@ -21,9 +22,11 @@ INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (4,'lampe','90','decor
 INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (5,'stylo','1000','fourniture');\
 INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (6,'chapeau','1000','cosmetique');\
 INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (7,'marteau','1000','bricolage');\
+INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (11,'scie','100','bricolage');\
 INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (8,'clavier','10000','informatique');\
 INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (9,'souris','100000','informatique');\
 INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (10,'foulard','10','cosmetique');\
+INSERT INTO Produit (Nprod,nomProd,prix,categorie) VALUES (12,'rien','10','decoration');\
 \
 INSERT INTO Brevet (Nbrev,intitule,"date",pays) VALUES (1,'cartegraphique','2040/09/12','francais');\
 INSERT INTO Brevet (Nbrev,intitule,"date",pays) VALUES (2,'jeu','2030/09/20','francais');\
@@ -43,6 +46,7 @@ INSERT INTO Invention(Nbrev,Nprod) VALUES (4,7);\
 INSERT INTO Invention(Nbrev,Nprod) VALUES (5,8);\
 INSERT INTO Invention(Nbrev,Nprod) VALUES (5,9);\
 INSERT INTO Invention(Nbrev,Nprod) VALUES (6,10);\
+INSERT INTO Invention(Nbrev,Nprod) VALUES (4,11);\
 \
 INSERT INTO Proprietaire(Nbrev,NSS) VALUES (1,1600425311114);\
 INSERT INTO Proprietaire(Nbrev,NSS) VALUES (3,1600425311114);\
@@ -56,6 +60,7 @@ INSERT INTO Proprietaire(Nbrev,NSS) VALUES (3,1650530311113);\
 INSERT INTO Proprietaire(Nbrev,NSS) VALUES (2,1021130311115);\
 INSERT INTO Proprietaire(Nbrev,NSS) VALUES (3,1021130311115);\
 INSERT INTO Proprietaire(Nbrev,NSS) VALUES (5,1021130311115);\
+INSERT INTO Proprietaire(Nbrev,NSS) VALUES (4,1021130311115);\
 INSERT INTO Proprietaire(Nbrev,NSS) VALUES (6,1020930311114);\
 INSERT INTO Proprietaire(Nbrev,NSS) VALUES (5,1000530311114);\
 INSERT INTO Proprietaire(Nbrev,NSS) VALUES (3,1100530312114);\
@@ -64,4 +69,5 @@ INSERT INTO Proprietaire(Nbrev,NSS) VALUES (4,1690530311114);\
 INSERT INTO Proprietaire(Nbrev,NSS) VALUES (2,1690530311114);\
 INSERT INTO Proprietaire(Nbrev,NSS) VALUES (3,1690530311114);\
 INSERT INTO Proprietaire(Nbrev,NSS) VALUES (6,1690530311114);\
-INSERT INTO Proprietaire(Nbrev,NSS) VALUES (7,1690530311114);}
+INSERT INTO Proprietaire(Nbrev,NSS) VALUES (7,1690530311114);\
+INSERT INTO Proprietaire(Nbrev,NSS) VALUES (4,1690530311114);}
